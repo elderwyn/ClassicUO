@@ -210,6 +210,36 @@ namespace ClassicUO.Game.UI.Gumps
             );
             supporters.MouseUp += (s, e) => { UIManager.Add(new Supporters()); };
 
+
+
+            RighClickableButton boatMovement;
+            Add
+            (boatMovement =
+                new RighClickableButton
+                (
+                    998877,
+                    0x098D,
+                    0x098D,
+                    0x098D,
+                    "Boat Movement",
+                    1,
+                    true,
+                    0,
+                    0x0036
+                )
+                {
+                    ButtonAction = ButtonAction.Activate,
+                    X = startX,
+                    Y = 1,
+                    FontCenter = true
+                },
+                1
+            );
+            boatMovement.MouseUp += (s, e) => {
+                UIManager.Add(new BoatMovementGump((Client.Game.Window.ClientBounds.Width - Width) >> 1, (Client.Game.Window.ClientBounds.Height - Height) >> 1)); 
+            };
+
+
             startX += largeWidth + 1;
 
             background.Width = startX + 1;
