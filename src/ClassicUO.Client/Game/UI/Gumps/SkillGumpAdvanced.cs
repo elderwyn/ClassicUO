@@ -248,6 +248,7 @@ namespace ClassicUO.Game.UI.Gumps
             resizeDrag.MouseUp += ResizeDrag_MouseUp;
             resizeDrag.X = Width - 10;
             resizeDrag.Y = Height - 10;
+
         }
 
         public override GumpType GumpType => GumpType.SkillMenu;

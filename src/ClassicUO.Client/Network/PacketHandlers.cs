@@ -1969,6 +1969,8 @@ namespace ClassicUO.Network
                             );
                         }
                     }
+                    UIManager.GetGump<SkillTrackerGump>()?.Dispose();
+                    UIManager.Add(new SkillTrackerGump());
                 }
 
                 while (p.Position < p.Length)
@@ -2038,6 +2040,7 @@ namespace ClassicUO.Network
 
                             standard?.Update(id);
                             advanced?.ForceUpdate();
+                            UIManager.GetGump<SkillTrackerGump>()?.ForceUpdate();
                         }
                     }
 
